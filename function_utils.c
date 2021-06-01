@@ -57,7 +57,6 @@ void push_last(t_list **node, int val)
 	current->next = (t_list *)malloc(sizeof(t_list));
 	current->next->val = val;
 	current->next->next = NULL;
-	
 }
 
 void print_list(t_list *node)

@@ -13,7 +13,7 @@
 Name = a.out
 CC = gcc
 Src = main.c header.h function_utils.c instructions.c
-Flags = -Wall -Wextra -Werror -fsanitize=address -g3
+Flags = -Wall -Wextra -Werror
 
 all: ${Name}
 

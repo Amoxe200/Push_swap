@@ -19,7 +19,6 @@ int main(int argc, char *argv[])
         t_list *node;
         t_list *node_b;
         
-        
         i = 1;
 		node = NULL;
 		node_b = NULL;
@@ -27,9 +26,10 @@ int main(int argc, char *argv[])
         {
 			value = ft_atoi(argv[i]);
 			push_last(&node, value);
+            push_last(&node_b, value);
             i++;
         }
-		rotatea(&node);
+        rr(&node, &node_b);
 		//print_list(node);
 		free(node);
     return (0);

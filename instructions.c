@@ -71,16 +71,45 @@ void pushb(t_list **nodea, t_list **nodeb)
 
 void rotatea(t_list **nodea)
 {
-    t_list *temp;
+    t_list *start;
+	t_list *last;
 
-    if (*nodea)
-    {
-        temp = *nodea;
-        *nodea = (*nodea)->next;
-        printf("----------------------\n");
-        print_list(*nodea);
-        printf("----------------------\n");
-        print_list(temp);
-    }
-    
+	
+	if (*nodea)
+	{
+		start = *nodea;
+		last = *nodea;
+
+		while (last->next != NULL)
+			last = last->next;
+		*nodea = start->next;
+		start->next = NULL;
+		last->next = start;
+		print_list(*nodea);
+	}
+}
+
+void rotateb(t_list **nodeb)
+{
+    t_list *start;
+	t_list *last;
+
+	if (*nodeb)
+	{
+		start = *nodeb;
+		last = *nodeb;
+
+		while (last->next != NULL)
+			last = last->next;
+		*nodeb = start->next;
+		start->next = NULL;
+		last->next = start;
+		print_list(*nodeb);
+	}
+}
+
+void rr(t_list **nodea, t_list **nodeb)
+{
+	rotatea(nodea);
+	rotateb(nodeb);
 }
