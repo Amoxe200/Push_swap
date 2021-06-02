@@ -33,4 +33,7 @@ void pushb(t_list **nodea, t_list **nodeb);
 void rotatea(t_list **nodea);
 void rotateb(t_list **nodeb);
 void rr(t_list **nodea, t_list **nodeb);
+void reversa(t_list **nodea);
+void reversb(t_list **nodeb);
+void rrr(t_list **nodea , t_list **nodeb);
 #endif

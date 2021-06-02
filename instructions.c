@@ -85,7 +85,6 @@ void rotatea(t_list **nodea)
 		*nodea = start->next;
 		start->next = NULL;
 		last->next = start;
-		print_list(*nodea);
 	}
 }
 
@@ -104,12 +103,64 @@ void rotateb(t_list **nodeb)
 		*nodeb = start->next;
 		start->next = NULL;
 		last->next = start;
-		print_list(*nodeb);
 	}
 }
 
 void rr(t_list **nodea, t_list **nodeb)
 {
-	rotatea(nodea);
-	rotateb(nodeb);
+	if ((*nodea) && (*nodeb))
+	{
+		rotatea(nodea);
+		rotateb(nodeb);
+	}
+}
+
+void reversa(t_list **nodea)
+{
+	t_list *last;
+	t_list *sec_last;
+
+	if (*nodea)
+	{
+		sec_last = NULL;
+		last = (*nodea);
+		while (last->next != NULL)
+		{
+			sec_last = last;
+			last = last->next;
+		}
+		sec_last->next = NULL;
+		last->next = *nodea;
+		*nodea = last;
+		print_list(*nodea);
+	}
+}
+
+void reversb(t_list **nodeb)
+{
+	t_list *last;
+	t_list *sec_last;
+
+
+	if (*nodeb)
+	{
+		sec_last = NULL;
+		last = (*nodeb);
+
+		while (last->next != NULL)
+		{
+			sec_last = last;
+			last = last->next;
+		}
+		sec_last->next = NULL;
+		last->next = *nodeb;
+		*nodeb = last;
+		print_list(*nodeb);
+	}	
+}
+
+void rrr(t_list **nodea , t_list **nodeb)
+{
+	reversa(nodea);
+	reversb(nodeb);
 }

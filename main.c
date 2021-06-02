@@ -29,8 +29,8 @@ int main(int argc, char *argv[])
             push_last(&node_b, value);
             i++;
         }
-        rr(&node, &node_b);
-		//print_list(node);
+        rrr(&node, &node_b);
+		// print_list(node);
 		free(node);
     return (0);
 }
