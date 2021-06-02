@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 14:22:56 by aaqari            #+#    #+#             */
-/*   Updated: 2021/05/30 17:11:30 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/06/02 09:59:58 by amoxe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,96 @@ void pushb(t_list **nodea, t_list **nodeb)
 
 void rotatea(t_list **nodea)
 {
-    t_list *temp;
+    t_list *start;
+	t_list *last;
 
-    if (*nodea)
-    {
-        temp = *nodea;
-        *nodea = (*nodea)->next;
-        printf("----------------------\n");
-        print_list(*nodea);
-        printf("----------------------\n");
-        print_list(temp);
-    }
-    
+	
+	if (*nodea)
+	{
+		start = *nodea;
+		last = *nodea;
+
+		while (last->next != NULL)
+			last = last->next;
+		*nodea = start->next;
+		start->next = NULL;
+		last->next = start;
+	}
+}
+
+void rotateb(t_list **nodeb)
+{
+    t_list *start;
+	t_list *last;
+
+	if (*nodeb)
+	{
+		start = *nodeb;
+		last = *nodeb;
+
+		while (last->next != NULL)
+			last = last->next;
+		*nodeb = start->next;
+		start->next = NULL;
+		last->next = start;
+	}
+}
+
+void rr(t_list **nodea, t_list **nodeb)
+{
+	if ((*nodea) && (*nodeb))
+	{
+		rotatea(nodea);
+		rotateb(nodeb);
+	}
+}
+
+void reversa(t_list **nodea)
+{
+	t_list *last;
+	t_list *sec_last;
+
+	if (*nodea)
+	{
+		sec_last = NULL;
+		last = (*nodea);
+		while (last->next != NULL)
+		{
+			sec_last = last;
+			last = last->next;
+		}
+		sec_last->next = NULL;
+		last->next = *nodea;
+		*nodea = last;
+		print_list(*nodea);
+	}
+}
+
+void reversb(t_list **nodeb)
+{
+	t_list *last;
+	t_list *sec_last;
+
+
+	if (*nodeb)
+	{
+		sec_last = NULL;
+		last = (*nodeb);
+
+		while (last->next != NULL)
+		{
+			sec_last = last;
+			last = last->next;
+		}
+		sec_last->next = NULL;
+		last->next = *nodeb;
+		*nodeb = last;
+		print_list(*nodeb);
+	}	
+}
+
+void rrr(t_list **nodea , t_list **nodeb)
+{
+	reversa(nodea);
+	reversb(nodeb);
 }
