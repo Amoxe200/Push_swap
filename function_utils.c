@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   function_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:47:52 by aaqari            #+#    #+#             */
-/*   Updated: 2021/05/30 14:23:38 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/06/03 18:20:08 by amoxe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,51 @@ void print_list(t_list *node)
 		printf("%d\n", current->val);
 		current = current->next;
 	}
+}
+
+void checkNumbers(t_list **node, int num)
+{
+	if(num <= 3)
+		sortTnum(node);
+}
+
+void sortTnum(t_list **node)
+{
+	t_list *head;
+	t_list *last;
+	t_list *middle;
+
+	int		lenght;
+	int 	i;
+
+	last = *node;
+	middle = *node;
+	head = *node;
+	lenght = 1;
+	i = 0;
+	while (last->next != NULL)
+	{
+		last = last->next;
+		lenght++;
+	}
+	while (i < lenght/2)
+	{
+		middle = middle->next;
+		i++;
+	}
+	cc(&head, &middle, &last, node);
+}
+
+void cc(t_list **hd, t_list **md, t_list **lt, t_list **nd)
+{
+	int hv;
+	int mv;
+	int lv;
+
+	hv = (*hd)->val;
+	mv = (*md)->val;
+	lv = (*lt)->val;
+	if ((hv > mv) && (mv < lv) && (lv > hv))
+		sa(nd);
+	
 }
