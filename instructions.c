@@ -6,7 +6,7 @@
 /*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 14:22:56 by aaqari            #+#    #+#             */
-/*   Updated: 2021/06/02 09:59:58 by amoxe            ###   ########.fr       */
+/*   Updated: 2021/06/03 18:13:18 by amoxe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void sa(t_list **node)
 		(*node)->val = (*node)->next->val;
 		(*node)->next->val = tmp;
 	}
+	printf("sa : \n");
+	print_list(*node);
 }
 
 void sb(t_list **node)
