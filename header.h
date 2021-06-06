@@ -6,7 +6,7 @@
 /*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:39 by aaqari            #+#    #+#             */
-/*   Updated: 2021/06/06 14:08:46 by amoxe            ###   ########.fr       */
+/*   Updated: 2021/06/06 14:14:05 by amoxe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,5 @@ void checkNumbers(t_list **node, int num);
 void sortTnum(t_list **node);
 void cc(t_list **hd, t_list **md, t_list **lt, t_list **nd);
 void caseone(t_list **h, t_list **m, t_list **l);
+void checkCase(int hv, int mv, int lv, t_list **nd);
 #endif
