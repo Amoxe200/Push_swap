@@ -6,7 +6,7 @@
 /*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 14:22:56 by aaqari            #+#    #+#             */
-/*   Updated: 2021/06/03 18:13:18 by amoxe            ###   ########.fr       */
+/*   Updated: 2021/06/06 14:08:46 by amoxe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void pushb(t_list **nodea, t_list **nodeb)
 	}
 }
 
-void rotatea(t_list **nodea)
+void ra(t_list **nodea)
 {
     t_list *start;
 	t_list *last;
@@ -87,6 +87,8 @@ void rotatea(t_list **nodea)
 		*nodea = start->next;
 		start->next = NULL;
 		last->next = start;
+		printf("ra\n");
+		print_list(*nodea);
 	}
 }
 
@@ -112,12 +114,12 @@ void rr(t_list **nodea, t_list **nodeb)
 {
 	if ((*nodea) && (*nodeb))
 	{
-		rotatea(nodea);
+		ra(nodea);
 		rotateb(nodeb);
 	}
 }
 
-void reversa(t_list **nodea)
+void rra(t_list **nodea)
 {
 	t_list *last;
 	t_list *sec_last;
@@ -134,6 +136,7 @@ void reversa(t_list **nodea)
 		sec_last->next = NULL;
 		last->next = *nodea;
 		*nodea = last;
+		printf("rra \n");
 		print_list(*nodea);
 	}
 }
@@ -163,6 +166,6 @@ void reversb(t_list **nodeb)
 
 void rrr(t_list **nodea , t_list **nodeb)
 {
-	reversa(nodea);
+	rra(nodea);
 	reversb(nodeb);
 }

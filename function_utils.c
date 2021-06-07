@@ -6,7 +6,7 @@
 /*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:47:52 by aaqari            #+#    #+#             */
-/*   Updated: 2021/06/03 18:20:08 by amoxe            ###   ########.fr       */
+/*   Updated: 2021/06/06 14:14:29 by amoxe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,25 @@ void cc(t_list **hd, t_list **md, t_list **lt, t_list **nd)
 	hv = (*hd)->val;
 	mv = (*md)->val;
 	lv = (*lt)->val;
+	checkCase(hv, mv, lv, nd);
+}
+
+void checkCase(int hv, int mv, int lv, t_list **nd)
+{
 	if ((hv > mv) && (mv < lv) && (lv > hv))
 		sa(nd);
-	
+	if ((hv > mv) && (mv > lv) && (lv < hv))
+	{
+		sa(nd);
+		rra(nd);
+	}
+	if ((hv > mv) && (mv < lv) && (lv < hv))
+		ra(nd);
+	if ((hv < mv) && (mv > lv) && (lv > hv))
+	{
+		sa(nd);
+		ra(nd);
+	}
+	if ((hv < mv) && (mv > lv) && (lv < hv))
+		rra(nd);
 }

@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
             num++;
             i++;
         }
+        print_list(node);
         checkNumbers(&node, num);
 		free(node);
     return (0);
