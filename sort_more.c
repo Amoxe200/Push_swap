@@ -6,16 +6,8 @@
 /*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 17:54:26 by amoxe             #+#    #+#             */
-/*   Updated: 2021/06/06 18:00:14 by amoxe            ###   ########.fr       */
+/*   Updated: 2021/06/07 11:47:03 by amoxe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-
-void check_args(int num, t_list **na, t_list **nb)
-{
-    if (num == 4)
-        // 4 numbers case
-    else if (num >= 5)
-        // 5 numbers case
-}
