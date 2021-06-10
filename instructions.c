@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 14:22:56 by aaqari            #+#    #+#             */
-/*   Updated: 2021/06/06 14:08:46 by amoxe            ###   ########.fr       */
+/*   Updated: 2021/06/08 15:49:40 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void sa(t_list **node)
 {
 	int		tmp;
+	printf("sa : \n");
 
 	if (*node && (*node)->next)
 	{
@@ -22,8 +23,6 @@ void sa(t_list **node)
 		(*node)->val = (*node)->next->val;
 		(*node)->next->val = tmp;
 	}
-	printf("sa : \n");
-	print_list(*node);
 }
 
 void sb(t_list **node)
@@ -44,11 +43,11 @@ void ss(t_list **nodea, t_list **nodeb)
 	sb(nodeb);
 }
 
-void pusha(t_list **nodea, t_list **nodeb)
+void pa(t_list **nodea, t_list **nodeb)
 {
 	t_list *new_node;
 
-	
+	printf("pa\n");
 	if (*nodeb)
 	{
 		new_node = *nodeb;
@@ -58,16 +57,16 @@ void pusha(t_list **nodea, t_list **nodeb)
 	}
 }
 
-void pushb(t_list **nodea, t_list **nodeb)
+void pb(t_list **nodea, t_list **nodeb)
 {
-	t_list *new_node;
-
-	if (*nodea)
+	t_list *head;
+	printf("pb : \n");
+	if ((*nodea))
 	{
-		new_node = *nodea;
-		*nodea = (*nodea)->next;
-		new_node->next = *nodeb;
-		*nodea = new_node;
+		head = (*nodea);
+		(*nodea) = (*nodea)->next;
+		head->next = *nodeb;
+		(*nodeb) = head;
 	}
 }
 
@@ -76,7 +75,7 @@ void ra(t_list **nodea)
     t_list *start;
 	t_list *last;
 
-	
+	printf("ra\n");
 	if (*nodea)
 	{
 		start = *nodea;
@@ -87,8 +86,6 @@ void ra(t_list **nodea)
 		*nodea = start->next;
 		start->next = NULL;
 		last->next = start;
-		printf("ra\n");
-		print_list(*nodea);
 	}
 }
 
@@ -136,8 +133,6 @@ void rra(t_list **nodea)
 		sec_last->next = NULL;
 		last->next = *nodea;
 		*nodea = last;
-		printf("rra \n");
-		print_list(*nodea);
 	}
 }
 
@@ -160,8 +155,7 @@ void reversb(t_list **nodeb)
 		sec_last->next = NULL;
 		last->next = *nodeb;
 		*nodeb = last;
-		print_list(*nodeb);
-	}	
+	}
 }
 
 void rrr(t_list **nodea , t_list **nodeb)

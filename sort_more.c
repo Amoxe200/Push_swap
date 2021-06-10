@@ -3,11 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   sort_more.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 17:54:26 by amoxe             #+#    #+#             */
-/*   Updated: 2021/06/07 11:47:03 by amoxe            ###   ########.fr       */
+/*   Updated: 2021/06/09 15:44:55 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+
+void sort_fnum(t_list **na, t_list **nb)
+{   
+    printf("------------\n");
+    pb(na, nb);
+    print_list((*na));
+    printf("----------\n");
+    pb(na, nb);
+    print_list((*na));
+    printf("-------------\n");
+    printf("NB : \n");
+    print_list((*nb));
+    printf("--------------\n");
+}

@@ -28,12 +28,12 @@ int main(int argc, char *argv[])
         {
 			value = ft_atoi(argv[i]);
 			push_last(&node, value);
-            push_last(&node_b, value);
+            // push_last(&node_b, value);
             num++;
             i++;
         }
-        print_list(node);
         checkNumbers(&node, &node_b, num);
+        // print_list(node);
 		free(node);
-    return (0);
+    return (0); 
 }

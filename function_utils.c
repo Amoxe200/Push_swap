@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   function_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:47:52 by aaqari            #+#    #+#             */
-/*   Updated: 2021/06/07 11:50:23 by amoxe            ###   ########.fr       */
+/*   Updated: 2021/06/07 12:19:29 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,10 @@ void print_list(t_list *node)
 
 void checkNumbers(t_list **node, t_list **nb,int num)
 {
-	if (nb != NULL)
-		printf("hhhhhhh\n");
 	if (num == 2)
 		twNum(node);
 	else if(num == 3)
 		sortTnum(node);
+	else if (num == 5)
+		sort_fnum(node, nb);
 }

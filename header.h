@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:39 by aaqari            #+#    #+#             */
-/*   Updated: 2021/06/07 11:49:56 by amoxe            ###   ########.fr       */
+/*   Updated: 2021/06/08 15:49:40 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void print_list(t_list *node);
 void sa(t_list **node);
 void sb(t_list **node);
 void ss(t_list **nodea, t_list **nodeb);
-void pusha(t_list **nodea, t_list **nodeb);
-void pushb(t_list **nodea, t_list **nodeb);
+void pa(t_list **nodea, t_list **nodeb);
+void pb(t_list **nodea, t_list **nodeb);
 void ra(t_list **nodea);
 void rotateb(t_list **nodeb);
 void rr(t_list **nodea, t_list **nodeb);
@@ -42,4 +42,5 @@ void sortTnum(t_list **node);
 void cc(t_list **hd, t_list **md, t_list **lt, t_list **nd);
 void caseone(t_list **h, t_list **m, t_list **l);
 void checkCase(int hv, int mv, int lv, t_list **nd);
+void sort_fnum(t_list **na, t_list **nb);
 #endif
