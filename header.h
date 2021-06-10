@@ -6,13 +6,14 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:39 by aaqari            #+#    #+#             */
-/*   Updated: 2021/06/08 15:49:40 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/06/10 12:06:10 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HEADER_H
 # define HEADER_H
-
+# define INT_MIN -32767
+# define INT_MAX 32767
 #include <stdio.h>
 #include <stdlib.h>
 
