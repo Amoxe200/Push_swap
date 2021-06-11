@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:39 by aaqari            #+#    #+#             */
-/*   Updated: 2021/06/10 12:06:10 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/06/11 12:28:02 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,10 @@ void cc(t_list **hd, t_list **md, t_list **lt, t_list **nd);
 void caseone(t_list **h, t_list **m, t_list **l);
 void checkCase(int hv, int mv, int lv, t_list **nd);
 void sort_fnum(t_list **na, t_list **nb);
+void push(t_list **na, int val);
+
+
+t_list* get_node(int val);
+void insertMin(t_list **node, int size, int min);
+void insertMax(t_list **node, int size, int max);
 #endif
