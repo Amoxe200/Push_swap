@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 14:22:56 by aaqari            #+#    #+#             */
-/*   Updated: 2021/06/08 15:49:40 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/06/28 12:25:52 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void sa(t_list **node)
 {
 	int		tmp;
-	printf("sa : \n");
+	printf("sa\n");
 
 	if (*node && (*node)->next)
 	{
@@ -60,7 +60,7 @@ void pa(t_list **nodea, t_list **nodeb)
 void pb(t_list **nodea, t_list **nodeb)
 {
 	t_list *head;
-	printf("pb : \n");
+	printf("pb\n");
 	if ((*nodea))
 	{
 		head = (*nodea);

@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:39 by aaqari            #+#    #+#             */
-/*   Updated: 2021/06/11 12:28:02 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/06/12 15:17:27 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,5 @@ void push(t_list **na, int val);
 t_list* get_node(int val);
 void insertMin(t_list **node, int size, int min);
 void insertMax(t_list **node, int size, int max);
+int     find_min(t_list *stack);
 #endif
