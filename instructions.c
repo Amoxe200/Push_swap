@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 14:22:56 by aaqari            #+#    #+#             */
-/*   Updated: 2021/06/28 12:25:52 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/06/28 12:46:49 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void sa(t_list **node)
 void sb(t_list **node)
 {
 	int		tmp;
-
+	printf("sb\n");
 	if (*node && (*node)->next)
 	{
 		tmp = (*node)->val;
@@ -39,6 +39,7 @@ void sb(t_list **node)
 
 void ss(t_list **nodea, t_list **nodeb)
 {
+	printf("ss\n");
 	sa(nodea);
 	sb(nodeb);
 }
@@ -93,7 +94,7 @@ void rotateb(t_list **nodeb)
 {
     t_list *start;
 	t_list *last;
-
+	printf("rb\n");
 	if (*nodeb)
 	{
 		start = *nodeb;
@@ -109,6 +110,7 @@ void rotateb(t_list **nodeb)
 
 void rr(t_list **nodea, t_list **nodeb)
 {
+	printf("rr\n");
 	if ((*nodea) && (*nodeb))
 	{
 		ra(nodea);
@@ -120,7 +122,7 @@ void rra(t_list **nodea)
 {
 	t_list *last;
 	t_list *sec_last;
-
+	printf("rra\n");
 	if (*nodea)
 	{
 		sec_last = NULL;
@@ -140,8 +142,7 @@ void reversb(t_list **nodeb)
 {
 	t_list *last;
 	t_list *sec_last;
-
-
+	printf("rrb\n");
 	if (*nodeb)
 	{
 		sec_last = NULL;
@@ -160,6 +161,7 @@ void reversb(t_list **nodeb)
 
 void rrr(t_list **nodea , t_list **nodeb)
 {
+	printf("rrr\n");
 	rra(nodea);
 	reversb(nodeb);
 }

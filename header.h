@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:39 by aaqari            #+#    #+#             */
-/*   Updated: 2021/06/12 15:17:27 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/03 12:57:11 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_list
 {
 	struct s_list	*next;
 	int				val;
+	int 			index;
 }				t_list;
 
 int	ft_atoi(const char *str);
@@ -43,7 +44,7 @@ void sortTnum(t_list **node);
 void cc(t_list **hd, t_list **md, t_list **lt, t_list **nd);
 void caseone(t_list **h, t_list **m, t_list **l);
 void checkCase(int hv, int mv, int lv, t_list **nd);
-void sort_fnum(t_list **na, t_list **nb);
+void sort_fnum(t_list **na, t_list **nb, int num);
 void push(t_list **na, int val);
 
 
@@ -51,4 +52,9 @@ t_list* get_node(int val);
 void insertMin(t_list **node, int size, int min);
 void insertMax(t_list **node, int size, int max);
 int     find_min(t_list *stack);
+int check_sorted(t_list **nodea);
+void sort_array(int tab[], int size);
+void print_array(int tab[], int size);
+void indexing_list(int tab[], t_list *na);
+void check_index(t_list *na);
 #endif

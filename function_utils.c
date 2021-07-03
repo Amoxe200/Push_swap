@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:47:52 by aaqari            #+#    #+#             */
-/*   Updated: 2021/06/11 11:30:50 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/02 16:26:07 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,28 @@ void print_list(t_list *node)
 
 void checkNumbers(t_list **node, t_list **nb,int num)
 {
-	if (num == 2)
-		twNum(node);
-	else if(num == 3)
-		sortTnum(node);
-	else if (num == 5)
-		sort_fnum(node, nb);
+	if (!(check_sorted(node)))
+	{
+		if (num == 2)
+			twNum(node);
+		else if(num == 3)
+			sortTnum(node);
+		else if (num >= 5)
+			sort_fnum(node, nb, num);
+	}
+
+}
+
+int check_sorted(t_list **nodea)
+{
+	t_list *node;
+
+	node = (*nodea);
+	while (node->next != NULL)
+	{
+		if (node->val > node->next->val)
+			return (0);
+		node = node->next;
+	}
+	return (1);
 }
