@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:47:52 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/02 16:26:07 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/03 16:22:13 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ int	ft_atoi(const char *str)
 void push_last(t_list **node, int val)
 {
 	t_list *current;
-	
+
 	if ((*node) == NULL) {
 		(*node) = (t_list *)malloc(sizeof(t_list));
 		(*node)->val = val;
 		(*node)->next = NULL;
 		return ;
 	}
-
+	
 	current = (*node);
 	while (current->next != NULL)
 		current = current->next;

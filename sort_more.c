@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 17:54:26 by amoxe             #+#    #+#             */
-/*   Updated: 2021/07/03 13:31:29 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/04 10:26:40 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void sort_fnum(t_list **na, t_list **nb, int num)
         j++;
     }
    sort_array(array, num);
-   indexing_list(array, stacka);
-    print_list(*na);
+   indexing_list(array, (*na), num);
+   check_index((*na));
 }
 
 void sort_array(int tab[], int size)
@@ -60,27 +60,34 @@ void sort_array(int tab[], int size)
 
 void check_index(t_list *na)
 {
-    while (na != NULL)
+    t_list *ptr;
+
+    ptr = na;
+    while (ptr != NULL)
     {
-        printf("The value of the node is %d\n", na->val);
-        printf("his index is %d\n", na->index);
-        na = na->next;
-    }   
+        printf("The val is = %d\n", ptr->val);
+        printf("His index is %d\n", ptr->index);
+        ptr = ptr->next;
+    }
 }
 
-void indexing_list(int tab[], t_list *na)
+void indexing_list(int tab[], t_list *na, int num)
 {
-    t_list *stacka;
+    t_list *stack;
     int i;
     
-    i = 0;
-    stacka = na;
-    while (stacka != NULL)
+    stack = na;
+    
+    while (stack != NULL)
     {
-        if (tab[i] == stacka->val)
-            stacka->val = tab[i];
-        stacka = stacka->next;
-        i++;
+        i = 0;
+        while (i < num)
+        {
+            if (tab[i] == stack->val)
+                stack->index = i;
+            i++;
+        }
+        stack = stack->next;
     }
 }
 
