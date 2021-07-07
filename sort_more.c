@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 17:54:26 by amoxe             #+#    #+#             */
-/*   Updated: 2021/07/04 10:26:40 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/06 12:23:13 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ void sort_fnum(t_list **na, t_list **nb, int num)
         j++;
     }
    sort_array(array, num);
-   indexing_list(array, (*na), num);
-   check_index((*na));
+   simple_list(array, (*na), num);
+   sort_stack(na, nb);
+//    print_list((*na));
 }
 
 void sort_array(int tab[], int size)
@@ -55,7 +56,54 @@ void sort_array(int tab[], int size)
         }
         i++;
     }
-    print_array(tab, size);
+}
+
+void sort_stack(t_list **na, t_list **nb)
+{
+    int max_num;
+    int max_bits;
+    int i;
+    int j;
+    int head_val;
+    int size;
+    
+    size = stack_lenght((*na));
+    max_num = stack_lenght((*na)) - 1;
+    max_bits = 0;
+    i = 0;
+    while ((max_num >> max_bits) != 0)
+        max_bits++;
+    // repeat for max bits times 
+    while (i < max_bits)
+    {
+        j = 0;
+        while (j < size)
+        {
+            head_val = (*na)->val;
+            if (((head_val >> i)&1) == 1)
+                ra(na);
+            else
+                pb(na, nb);
+            j++;
+        }
+        i++;
+         while ((*nb) != NULL)
+            pa(na, nb);
+    }
+
+}
+
+int stack_lenght(t_list *na)
+{
+    int length;
+    
+    length = 0;
+    while (na != NULL)
+        {
+            length++;
+            na = na->next;
+        }
+    return (length);
 }
 
 void check_index(t_list *na)
@@ -66,12 +114,11 @@ void check_index(t_list *na)
     while (ptr != NULL)
     {
         printf("The val is = %d\n", ptr->val);
-        printf("His index is %d\n", ptr->index);
         ptr = ptr->next;
     }
 }
 
-void indexing_list(int tab[], t_list *na, int num)
+void simple_list(int tab[], t_list *na, int num)
 {
     t_list *stack;
     int i;
@@ -84,7 +131,7 @@ void indexing_list(int tab[], t_list *na, int num)
         while (i < num)
         {
             if (tab[i] == stack->val)
-                stack->index = i;
+                stack->val = i;
             i++;
         }
         stack = stack->next;
