@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:47:52 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/03 16:22:13 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/09 11:35:43 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-void push_last(t_list **node, int val)
+void	push_last(t_list **node, int val)
 {
-	t_list *current;
+	t_list	*current;
 
-	if ((*node) == NULL) {
+	if ((*node) == NULL)
+	{
 		(*node) = (t_list *)malloc(sizeof(t_list));
 		(*node)->val = val;
 		(*node)->next = NULL;
 		return ;
 	}
-	
 	current = (*node);
 	while (current->next != NULL)
 		current = current->next;
@@ -59,34 +59,34 @@ void push_last(t_list **node, int val)
 	current->next->next = NULL;
 }
 
-void print_list(t_list *node)
+void	print_list(t_list *node)
 {
-	t_list *current = node;
+	t_list	*current;
 
+	current = node;
 	while (current != NULL)
 	{
-		printf("%d\n", current->val);
+		printf("%d\n", current->index);
 		current = current->next;
 	}
 }
 
-void checkNumbers(t_list **node, t_list **nb,int num)
+void	checkNumbers(t_list **node, t_list **nb, int num)
 {
 	if (!(check_sorted(node)))
 	{
 		if (num == 2)
 			twNum(node);
-		else if(num == 3)
+		else if (num == 3)
 			sortTnum(node);
 		else if (num >= 5)
 			sort_fnum(node, nb, num);
 	}
-
 }
 
-int check_sorted(t_list **nodea)
+int	check_sorted(t_list **nodea)
 {
-	t_list *node;
+	t_list	*node;
 
 	node = (*nodea);
 	while (node->next != NULL)

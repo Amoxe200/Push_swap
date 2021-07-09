@@ -6,13 +6,13 @@
 #    By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/26 10:10:20 by aaqari            #+#    #+#              #
-#    Updated: 2021/06/07 12:33:06 by aaqari           ###   ########.fr        #
+#    Updated: 2021/07/08 12:27:30 by aaqari           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 Name = push_swap
 CC = gcc
-Src = main.c function_utils.c instructions.c sort_three.c sort_more.c
+Src = main.c function_utils.c instructions.c sort_three.c sort_more.c instruction_two.c instruction_trr.c
 Obj = ${Src:.c=.o}
 Flags = -Wall -Wextra -Werror
 

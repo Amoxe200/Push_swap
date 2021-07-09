@@ -6,80 +6,79 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 17:54:26 by amoxe             #+#    #+#             */
-/*   Updated: 2021/07/06 12:23:13 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/09 11:43:22 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void sort_fnum(t_list **na, t_list **nb, int num)
+void	sort_fnum(t_list **na, t_list **nb, int num)
 {
-    t_list *stacka;
-    t_list *stackb;
-    int array[num];
-     int j;
-     
-    stacka = (*na);
-    stackb = (*nb);
-    j = 0;
-    while (stacka != NULL && j <= num)
-    {
-        array[j] = stacka->val;
-        stacka = stacka->next;
-        j++;
-    }
-   sort_array(array, num);
-   simple_list(array, (*na), num);
-   sort_stack(na, nb);
-//    print_list((*na));
+	t_list	*stacka;
+	t_list	*stackb;
+    int		array[num];
+    int		j;
+
+	stacka = (*na);
+	stackb = (*nb);
+	j = 0;
+	while (stacka != NULL && j <= num)
+	{
+		array[j] = stacka->val;
+		stacka = stacka->next;
+		j++;
+	}
+	sort_array(array, num);
+	simple_list(array, (*na), num);
+	sort_stack(na, nb);
+    // print_list(*na);
 }
 
-void sort_array(int tab[], int size)
+void	sort_array(int tab[], int size)
 {
-    int i;
-    int j;
-    int a;
+	int	i;
+	int	j;
+	int	a;
     
-    i = 0;
-    while (i < size)
-    {
-        j = i + 1;
-        while (j < size)
-        {
-            if (tab[i] > tab[j])
-            {
-                a = tab[i];
-                tab[i] = tab[j];
-                tab[j] = a;
-            }
-            j++;
-        }
-        i++;
-    }
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (tab[i] > tab[j])
+			{
+				a = tab[i];
+				tab[i] = tab[j];
+				tab[j] = a;
+			}
+			j++;
+		}
+		i++;
+	}
 }
 
-void sort_stack(t_list **na, t_list **nb)
+void	sort_stack(t_list **na, t_list **nb)
 {
-    int max_num;
-    int max_bits;
-    int i;
-    int j;
-    int head_val;
-    int size;
+	int	max_num;
+	int	max_bits;
+	int	i;
+	int	j;
+	int	head_val;
+	int	size;
     
-    size = stack_lenght((*na));
-    max_num = stack_lenght((*na)) - 1;
-    max_bits = 0;
-    i = 0;
-    while ((max_num >> max_bits) != 0)
-        max_bits++;
-    // repeat for max bits times 
-    while (i < max_bits)
-    {
-        j = 0;
+	size = stack_lenght((*na));
+	max_num = stack_lenght((*na)) - 1;
+	max_bits = 0;
+	i = 0;
+	while ((max_num >> max_bits) != 0)
+		max_bits++; 
+	while (i < max_bits)
+	{
+		j = 0;
         while (j < size)
         {
-            head_val = (*na)->val;
+            head_val = (*na)->index;
             if (((head_val >> i)&1) == 1)
                 ra(na);
             else
@@ -131,7 +130,7 @@ void simple_list(int tab[], t_list *na, int num)
         while (i < num)
         {
             if (tab[i] == stack->val)
-                stack->val = i;
+                stack->index = i;
             i++;
         }
         stack = stack->next;
