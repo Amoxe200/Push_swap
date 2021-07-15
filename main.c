@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:32 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/09 13:09:26 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/15 11:58:55 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,19 @@ int	main(int argc, char *argv[])
 	node_b = NULL;
 	while (i < argc)
 	{
+		if(check_num(argv[i]) == 0)
+		{
+			printf("Error\n");
+			return (0);
+		}
 		value = ft_atoi(argv[i]);
 		push_last(&node, value);
 		num++;
 		i++;
 	}
 	checkNumbers(&node, &node_b, num);
-	free(node);
+	freeList(node);
+	freeList(node_b);
+	//system("leaks push_swap");
 	return (0);
 }
