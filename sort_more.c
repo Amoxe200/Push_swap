@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_more.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 17:54:26 by amoxe             #+#    #+#             */
-/*   Updated: 2021/07/09 11:43:22 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/15 14:23:34 by amoxe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,10 @@
 void	sort_fnum(t_list **na, t_list **nb, int num)
 {
 	t_list	*stacka;
-	t_list	*stackb;
     int		array[num];
     int		j;
 
 	stacka = (*na);
-	stackb = (*nb);
 	j = 0;
 	while (stacka != NULL && j <= num)
 	{

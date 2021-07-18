@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:39 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/15 11:51:10 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/15 17:38:45 by amoxe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,5 @@ void	freeList(t_list *node);
 int		ft_isdigit(int c);
 int		ft_strlen(char str[]);
 int		check_num(char *argv);
-
+int 	check_duplicate(char *argv);
 #endif

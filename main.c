@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:32 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/15 11:58:55 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/15 17:43:08 by amoxe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ int	main(int argc, char *argv[])
 	num = 0;
 	node = NULL;
 	node_b = NULL;
+	if (check_duplicate(*argv))
+		{
+			printf("ret fun %d\n", check_duplicate(*argv));
+			printf("Error\n");
+			return (0);
+		}
 	while (i < argc)
 	{
 		if(check_num(argv[i]) == 0)
