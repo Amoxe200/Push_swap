@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:39 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/15 17:38:45 by amoxe            ###   ########.fr       */
+/*   Updated: 2021/07/18 18:09:57 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ int		ft_atoi(const char *str);
 int		find_min(t_list *stack);
 int		check_sorted(t_list **nodea);
 int		stack_lenght(t_list *na);
+int		ft_isdigit(int c);
+int		ft_strlen(char str[]);
+int		check_num(char *argv);
+int 	check_duplicate(t_list *node);
 void	push_last(t_list **node, int val);
 void	print_list(t_list *node);
 void	sa(t_list **node);
@@ -58,8 +62,5 @@ void	simple_list(int tab[], t_list *na, int num);
 void	check_index(t_list *na);
 void	sort_stack(t_list **na, t_list **nb);
 void	freeList(t_list *node);
-int		ft_isdigit(int c);
-int		ft_strlen(char str[]);
-int		check_num(char *argv);
-int 	check_duplicate(char *argv);
+int parser(int argc, char *argv[], t_list *node, int num);
 #endif

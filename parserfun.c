@@ -3,33 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   parserfun.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 17:01:18 by amoxe             #+#    #+#             */
-/*   Updated: 2021/07/15 17:42:34 by amoxe            ###   ########.fr       */
+/*   Updated: 2021/07/18 17:13:51 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int check_duplicate(char *argv)
+int check_duplicate(t_list *node)
 {
-    int i;
-    int j;
-    int size;
+    int counter;
+    t_list *ptr;
     
-    i = 0;
-    size = ft_strlen(argv);
-    while (i < size)
+    counter = 0;
+    while (node->next != NULL)
     {
-        j = i + 1;
-        while (j < size)
+        ptr = node->next;
+        while (ptr != NULL)
         {
-            if (argv[i] == argv[j])
-                return (0);
-            j++;
+            if (node->val == ptr->val)
+            {
+                counter++;
+                break;
+            }
+            ptr = ptr->next;
         }
-        i++;
+        node = node->next;
     }
-    return (1);
+    return (counter);
 }

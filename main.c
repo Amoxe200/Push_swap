@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:32 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/15 17:43:08 by amoxe            ###   ########.fr       */
+/*   Updated: 2021/07/18 18:10:44 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,30 @@
 
 int	main(int argc, char *argv[])
 {
-	int		i;
-	int		value;
+
 	int		num;
 	t_list	*node;
 	t_list	*node_b;
 
-	i = 1;
 	num = 0;
 	node = NULL;
 	node_b = NULL;
-	if (check_duplicate(*argv))
-		{
-			printf("ret fun %d\n", check_duplicate(*argv));
-			printf("Error\n");
-			return (0);
-		}
+	
+	parser(argc, argv, node, num);
+	checkNumbers(&node, &node_b, num);
+	freeList(node);
+	freeList(node_b);
+	//system("leaks push_swap");
+	return (0);
+}
+
+int parser(int argc, char *argv[], t_list *node, int num)
+{
+	int i;
+	int value;
+	
+	i = 1;
+		
 	while (i < argc)
 	{
 		if(check_num(argv[i]) == 0)
@@ -42,9 +50,10 @@ int	main(int argc, char *argv[])
 		num++;
 		i++;
 	}
-	checkNumbers(&node, &node_b, num);
-	freeList(node);
-	freeList(node_b);
-	//system("leaks push_swap");
-	return (0);
+	if ((check_duplicate(node)) > 0)
+		{
+			printf("Error\n");
+			return(0);
+		}
+	return (1);
 }

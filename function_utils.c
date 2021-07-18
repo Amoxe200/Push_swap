@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:47:52 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/09 11:35:43 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/18 16:36:50 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	print_list(t_list *node)
 	current = node;
 	while (current != NULL)
 	{
-		printf("%d\n", current->index);
+		printf("%d\n", current->val);
 		current = current->next;
 	}
 }
