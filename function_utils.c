@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   function_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:47:52 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/09 11:35:43 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/19 23:00:50 by amoxe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
 	long long	result;
 	int			sign;
@@ -66,7 +66,7 @@ void	print_list(t_list *node)
 	current = node;
 	while (current != NULL)
 	{
-		printf("%d\n", current->index);
+		printf("%d\n", current->val);
 		current = current->next;
 	}
 }
@@ -79,7 +79,9 @@ void	checkNumbers(t_list **node, t_list **nb, int num)
 			twNum(node);
 		else if (num == 3)
 			sortTnum(node);
-		else if (num >= 5)
+		else if (num == 5)
+			sort_five(node, nb);
+		else if (num >= 4 && num != 5)
 			sort_fnum(node, nb, num);
 	}
 }
