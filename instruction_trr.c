@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instruction_trr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 12:26:20 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/15 17:35:12 by amoxe            ###   ########.fr       */
+/*   Updated: 2021/07/19 20:04:14 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ int	check_num(char *argv)
 	
 	i = 0;
 	size = ft_strlen(argv);
+	if (size > 11)
+		{
+			printf("Error\n");
+			exit(1);
+		}
 	while (i < size)
 	{
 		if ((argv[i] == '-') && (!ft_isdigit(argv[i + 1])))

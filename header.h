@@ -6,16 +6,17 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:39 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/19 17:23:44 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/19 20:01:40 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HEADER_H
 # define HEADER_H
-# define INT_MIN -32767
-# define INT_MAX 32767
+# define MAX_INT 2147483647
+# define MIN_INT -2147483648
 # include <stdio.h>
 # include <stdlib.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -25,7 +26,7 @@ typedef struct s_list
 }				t_list;
 
 t_list	*get_node(int val);
-int		ft_atoi(const char *str);
+long long		ft_atoi(const char *str);
 int		find_min(t_list *stack);
 int		check_sorted(t_list **nodea);
 int		stack_lenght(t_list *na);
@@ -33,6 +34,7 @@ int		ft_isdigit(int c);
 int		ft_strlen(char str[]);
 int		check_num(char *argv);
 int 	check_duplicate(t_list *node);
+int		parser(int argc, char *argv[], t_list **node_, int *num);
 void	push_last(t_list **node, int val);
 void	print_list(t_list *node);
 void	sa(t_list **node);
@@ -62,5 +64,5 @@ void	simple_list(int tab[], t_list *na, int num);
 void	check_index(t_list *na);
 void	sort_stack(t_list **na, t_list **nb);
 void	freeList(t_list *node);
-int		parser(int argc, char *argv[], t_list **node_, int *num);
+void    check_int(long long val);
 #endif
