@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:39 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/18 18:09:57 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/19 17:23:44 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,5 @@ void	simple_list(int tab[], t_list *na, int num);
 void	check_index(t_list *na);
 void	sort_stack(t_list **na, t_list **nb);
 void	freeList(t_list *node);
-int parser(int argc, char *argv[], t_list *node, int num);
+int		parser(int argc, char *argv[], t_list **node_, int *num);
 #endif

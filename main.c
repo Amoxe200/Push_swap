@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:32 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/18 18:10:44 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/19 17:41:29 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int	main(int argc, char *argv[])
 	int		num;
 	t_list	*node;
 	t_list	*node_b;
-
+	
 	num = 0;
 	node = NULL;
 	node_b = NULL;
-	
-	parser(argc, argv, node, num);
+
+	parser(argc, argv, &node, &num);
 	checkNumbers(&node, &node_b, num);
 	freeList(node);
 	freeList(node_b);
@@ -31,29 +31,30 @@ int	main(int argc, char *argv[])
 	return (0);
 }
 
-int parser(int argc, char *argv[], t_list *node, int num)
+int     parser(int argc, char *argv[], t_list **node_, int *num)
 {
-	int i;
-	int value;
-	
-	i = 1;
-		
-	while (i < argc)
-	{
-		if(check_num(argv[i]) == 0)
-		{
-			printf("Error\n");
-			return (0);
-		}
-		value = ft_atoi(argv[i]);
-		push_last(&node, value);
-		num++;
-		i++;
-	}
-	if ((check_duplicate(node)) > 0)
-		{
-			printf("Error\n");
-			return(0);
-		}
-	return (1);
+    int i;
+    int value;
+ 
+    i = 1;
+	if (argc == 1)
+		exit(1);
+    while (i < argc)
+    {
+        if(check_num(argv[i]) == 0)
+        {
+            printf("Error\n");
+            exit (1);
+        }
+        value = ft_atoi(argv[i]);
+        push_last(node_, value);
+        (*num)++;
+        i++;
+    }
+    if ((check_duplicate(*node_)) > 0)
+    {
+        printf("Error\n");
+        exit(1);
+    }
+    return (1);
 }
