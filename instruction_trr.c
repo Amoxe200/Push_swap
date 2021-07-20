@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 12:26:20 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/19 20:04:14 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/20 07:32:28 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	rrr(t_list **nodea, t_list **nodeb)
 	reversb(nodeb);
 }
 
-void freeList(t_list *node)
+void	freeList(t_list *node)
 {
-	t_list *tmp;
-	
+	t_list	*tmp;
+
 	tmp = node;
 	while (node != NULL)
 	{
@@ -34,16 +34,16 @@ void freeList(t_list *node)
 
 int	check_num(char *argv)
 {
-	int i;
-	int size;
-	
+	int	i;
+	int	size;
+
 	i = 0;
 	size = ft_strlen(argv);
 	if (size > 11)
-		{
-			printf("Error\n");
-			exit(1);
-		}
+	{
+		printf("Error\n");
+		exit(1);
+	}
 	while (i < size)
 	{
 		if ((argv[i] == '-') && (!ft_isdigit(argv[i + 1])))
@@ -65,7 +65,7 @@ int	ft_isdigit(int c)
 
 int	ft_strlen(char str[])
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])

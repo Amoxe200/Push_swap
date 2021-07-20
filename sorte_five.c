@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorte_five.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amoxe <amoxe@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 22:26:34 by amoxe             #+#    #+#             */
-/*   Updated: 2021/07/20 00:56:18 by amoxe            ###   ########.fr       */
+/*   Updated: 2021/07/20 07:24:27 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void    sort_five(t_list **node, t_list **nb)
     }
     sortTnum(node);
     sort_stb(node, nb);
-    print_list((*node));
+    // print_list((*node));
 }
 
 void sort_stb(t_list **node, t_list **nb)
