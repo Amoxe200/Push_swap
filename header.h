@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:39 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/20 07:30:17 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/25 11:06:36 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,6 @@ void		sort(t_list **node, t_list **nb, int min, int lenght);
 void		helper_one(t_list **node, t_list **nb, int pos);
 void		helper_two(t_list **node, t_list **nb, int pos);
 void		sort_stb(t_list **node, t_list **nb);
+void		boucle(int	*head_val,	int	*max_bits, t_list **na, t_list **nb);
+void		ft_putchar(char c);
 #endif

@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 17:54:26 by amoxe             #+#    #+#             */
-/*   Updated: 2021/07/20 08:31:36 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/25 10:22:34 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,26 +57,21 @@ void	sort_array(int tab[], int size)
 	}
 }
 
-void	sort_stack(t_list **na, t_list **nb)
+void	boucle(int	*head_val,	int	*max_bits, t_list **na, t_list **nb)
 {
-	int	max_bits;
-	int	i;
-	int	j;
-	int	head_val;
-	int	size;
+	int		i;
+	int		j;
+	int		size;
 
 	size = stack_lenght((*na));
-	max_bits = 0;
 	i = 0;
-	while (((stack_lenght((*na)) - 1 ) >> max_bits) != 0)
-		max_bits++;
-	while (i < max_bits)
+	while (i < *max_bits)
 	{
 		j = 0;
 		while (j < size)
 		{
-			head_val = (*na)->index;
-			if (((head_val >> i) & 1) == 1)
+			*head_val = (*na)->index;
+			if (((*(head_val) >> i) & 1) == 1)
 				ra(na);
 			else
 				pb(na, nb);
@@ -85,61 +80,5 @@ void	sort_stack(t_list **na, t_list **nb)
 		i++;
 		while ((*nb) != NULL)
 			pa(na, nb);
-	}
-}
-
-int	stack_lenght(t_list *na)
-{
-	int	length;
-
-	length = 0;
-	while (na != NULL)
-	{
-		length++;
-		na = na->next;
-	}
-	return (length);
-}
-
-void	check_index(t_list *na)
-{
-	t_list	*ptr;
-
-	ptr = na;
-	while (ptr != NULL)
-	{
-		printf("The val is = %d\n", ptr->val);
-		ptr = ptr->next;
-	}
-}
-
-void	simple_list(int tab[], t_list *na, int num)
-{
-	t_list	*stack;
-	int		i;
-
-	stack = na;
-	while (stack != NULL)
-	{
-		i = 0;
-		while (i < num)
-		{
-			if (tab[i] == stack->val)
-				stack->index = i;
-			i++;
-		}
-		stack = stack->next;
-	}
-}
-
-void	print_array(int tab[], int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		printf("The element %d is %d\n", i , tab[i]);
-		i++;
 	}
 }
