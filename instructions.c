@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 14:22:56 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/08 12:26:37 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/25 15:36:00 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sa(t_list **node)
 {
 	int	tmp;
 
-	printf("sa\n");
+	print("sa\n");
 	if (*node && (*node)->next)
 	{
 		tmp = (*node)->val;
@@ -29,7 +29,7 @@ void	sb(t_list **node)
 {
 	int	tmp;
 
-	printf("sb\n");
+	print("sb\n");
 	if (*node && (*node)->next)
 	{
 		tmp = (*node)->val;
@@ -40,7 +40,7 @@ void	sb(t_list **node)
 
 void	ss(t_list **nodea, t_list **nodeb)
 {
-	printf("ss\n");
+	print("ss\n");
 	sa(nodea);
 	sb(nodeb);
 }
@@ -49,7 +49,7 @@ void	pa(t_list **nodea, t_list **nodeb)
 {
 	t_list	*new_node;
 
-	printf("pa\n");
+	print("pa\n");
 	if (*nodeb)
 	{
 		new_node = *nodeb;
@@ -63,7 +63,7 @@ void	pb(t_list **nodea, t_list **nodeb)
 {
 	t_list	*head;
 
-	printf("pb\n");
+	print("pb\n");
 	if ((*nodea))
 	{
 		head = (*nodea);

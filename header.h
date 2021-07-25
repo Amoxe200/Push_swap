@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:39 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/25 11:06:36 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/25 15:48:53 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -25,8 +26,8 @@ typedef struct s_list
 	int				index;
 }				t_list;
 
-long long	ft_atoi(const char *str);
 t_list		*get_node(int val);
+long long	ft_atoi(const char *str);
 int			find_min(t_list *stack);
 int			check_sorted(t_list **nodea);
 int			stack_lenght(t_list *na);
@@ -75,4 +76,5 @@ void		helper_two(t_list **node, t_list **nb, int pos);
 void		sort_stb(t_list **node, t_list **nb);
 void		boucle(int	*head_val,	int	*max_bits, t_list **na, t_list **nb);
 void		ft_putchar(char c);
+void		print(char *str);
 #endif

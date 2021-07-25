@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:44:32 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/20 07:37:34 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/25 15:36:06 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	parser(int argc, char *argv[], t_list **node_, int *num)
 	{
 		if (check_num(argv[i]) == 0)
 		{
-			printf("Error\n");
+			print("Error\n");
 			exit (1);
 		}
 		value = ft_atoi(argv[i]);
@@ -51,7 +51,7 @@ int	parser(int argc, char *argv[], t_list **node_, int *num)
 	}
 	if ((check_duplicate(*node_)) > 0)
 	{
-		printf("Error\n");
+		print("Error\n");
 		exit(1);
 	}
 	return (1);
@@ -61,7 +61,7 @@ void	check_int(long long val)
 {
 	if (val > MAX_INT || val < MIN_INT)
 	{
-		printf("Error\n");
+		print("Error\n");
 		exit(1);
 	}
 }

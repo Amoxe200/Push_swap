@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 12:24:32 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/08 12:26:03 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/25 15:35:46 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ra(t_list **nodea)
 	t_list	*start;
 	t_list	*last;
 
-	printf("ra\n");
+	print("ra\n");
 	if (*nodea)
 	{
 		start = *nodea;
@@ -35,7 +35,7 @@ void	rotateb(t_list **nodeb)
 	t_list	*start;
 	t_list	*last;
 
-	printf("rb\n");
+	print("rb\n");
 	if (*nodeb)
 	{
 		start = *nodeb;
@@ -50,7 +50,7 @@ void	rotateb(t_list **nodeb)
 
 void	rr(t_list **nodea, t_list **nodeb)
 {
-	printf("rr\n");
+	print("rr\n");
 	if ((*nodea) && (*nodeb))
 	{
 		ra(nodea);
@@ -63,7 +63,7 @@ void	rra(t_list **nodea)
 	t_list	*last;
 	t_list	*sec_last;
 
-	printf("rra\n");
+	print("rra\n");
 	if (*nodea)
 	{
 		sec_last = NULL;
@@ -84,7 +84,7 @@ void	reversb(t_list **nodeb)
 	t_list	*last;
 	t_list	*sec_last;
 
-	printf("rrb\n");
+	print("rrb\n");
 	if (*nodeb)
 	{
 		sec_last = NULL;

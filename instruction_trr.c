@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 12:26:20 by aaqari            #+#    #+#             */
-/*   Updated: 2021/07/20 07:32:28 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/25 15:35:39 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rrr(t_list **nodea, t_list **nodeb)
 {
-	printf("rrr\n");
+	print("rrr\n");
 	rra(nodea);
 	reversb(nodeb);
 }
@@ -41,7 +41,7 @@ int	check_num(char *argv)
 	size = ft_strlen(argv);
 	if (size > 11)
 	{
-		printf("Error\n");
+		print("Error\n");
 		exit(1);
 	}
 	while (i < size)

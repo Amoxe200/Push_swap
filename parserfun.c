@@ -6,7 +6,7 @@
 /*   By: aaqari <aaqari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 17:01:18 by amoxe             #+#    #+#             */
-/*   Updated: 2021/07/25 11:06:16 by aaqari           ###   ########.fr       */
+/*   Updated: 2021/07/25 15:42:31 by aaqari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,19 @@ int	check_duplicate(t_list *node)
 	return (counter);
 }
 
-void	ft_putchar(char c) {
+void	ft_putchar(char c)
+{
 	write(1, &c, 1);
+}
+
+void	print(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }
